@@ -10,7 +10,7 @@ const ListadoPacientes = () => {
                 <span className="text-indigo-600 font-bold">Pacientes y citas</span>
             </p>
 
-            <div className=" md:h-screen overflow-y-scroll">
+            <div className=" md:h-4/5 overflow-y-scroll">
 
                 <Paciente />
                 <Paciente />
