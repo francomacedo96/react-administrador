@@ -1,4 +1,5 @@
 import { useState } from "react"
+import Error from "./Error";
 
 const Formulario = ({pacientes, setPacientes}) => {
 
@@ -32,11 +33,15 @@ const Formulario = ({pacientes, setPacientes}) => {
       fecha,
       sintomas
     }
-
-
   
     setPacientes([...pacientes, objetoPaciente])
 
+    //reinicio
+    setNombre("")
+    setPropietario("")
+    setEmail("")
+    setFecha("")
+    setSintomas("")
   }
 
   
@@ -125,7 +130,7 @@ const Formulario = ({pacientes, setPacientes}) => {
         </div>
 
         <input value="agregar paciente" type="submit" className="bg-indigo-600 w-full rounded-lg p-3 text-white font-bold uppercase hover:bg-indigo-700 cursor-pointer transition-all"/>
-        {error && <div className="bg-red-500 uppercase font-bold mt-3 rounded-lg text-white p-2 text-center"><p>Todos los campos son obligatorios</p></div>}
+        {error && <Error mensaje="Todos los campos son obligatorios" /> }
 
 
       </form>
